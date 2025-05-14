@@ -48,9 +48,9 @@ function StudentDashboard() {
   return (
     <>
     
-      <div className='bg-black h-[100vh] text-white relative'>
+      <div className='bg-black text-white relative max-sm:h-[100vh]'>
         <div className='absolute top-10 right-10 max-sm:top-2'>
-          <button className='cursor-pointer py-2 px-4 rounded-md bg-blue-600' onClick={onsubmit} >SignOut</button>
+          <button className='cursor-pointer py-2 px-4 rounded-md bg-blue-600 hover:bg-blue-400' onClick={onsubmit} >SignOut</button>
         </div>
             <div className='w-[80vw] mx-auto p-10 max-sm:p-0 max-sm:w-[100vw]'>
                 <div className='p-10 max-sm:p-0'>
@@ -58,23 +58,26 @@ function StudentDashboard() {
                    
                     <div className='flex gap-10 max-sm:flex-col max-sm:justify-center max-sm:items-center'>
                     <Link to="/addstudent">
-                    <div className='w-[20vw] flex items-center justify-between px-1 py-2 rounded-md mb-10 bg-blue-600 cursor-pointer max-sm:w-[80vw] max-sm:mb-0'>
+                    <div className='w-[20vw] flex items-center justify-between px-1 py-2 rounded-md mb-10 bg-blue-600 cursor-pointer max-sm:w-[80vw] max-sm:mb-0 hover:bg-blue-400'>
                       <div className='mx-auto'>
                         <p className=' text-white font-bold'>Add Student</p>
                       </div>
                     </div>
                     </Link>
-                    <div className='w-[20vw] flex items-center justify-center py-2 rounded-md mb-10 bg-blue-600 cursor-pointer text-white max-sm:w-[80vw]'>
+                    <div className='w-[20vw] flex items-center justify-center py-2 rounded-md mb-10 bg-blue-600 cursor-pointer text-white max-sm:w-[80vw] hover:bg-blue-400'>
     
                   
-                    <label  className='text-white' for="course">Choose a course:</label>
-                    <select onChange={(e)=> setCourse(e.target.value)} id="course" name="course">
+                    <label  className='text-white cursor-pointer' for="course">Choose a course:</label>
+                    <select className='cursor-pointer' onChange={(e)=> setCourse(e.target.value)} id="course" name="course">
                     <option className='text-black' value="All Courses" selected>All Courses</option>
                     <option className='text-black' value="BBA">BBA</option>
+                    <option className='text-black' value="MBA">MBA</option>
                     <option className='text-black' value="Bcom">Bcom</option>
+                    <option className='text-black' value="Mcom">Mcom</option>
                     <option className='text-black' value="BCA" >BCA</option>
                     <option className='text-black' value="MCA">MCA</option>
-                    <option className='text-black' value="Btech">Btech</option>
+                    <option className='text-black' value="Btech">B.tech</option>
+                    <option className='text-black' value="Mtech">M.tech</option>
                     </select>
                     </div>
 
@@ -83,10 +86,12 @@ function StudentDashboard() {
                     
                     <div >
                        <div className='flex justify-between font-bold border-b mb-5 p-2 max-sm:overflow-x-scroll '>
-                        <p className='w-[10vw]  whitespace-nowrap px-4'>Name</p>
-                        <p className='w-[10vw] whitespace-nowrap px-4'>Email</p>
-                        <p className='w-[3vw]  whitespace-nowrap px-4'>Age</p>
-                        <p className='w-[3vw]  whitespace-nowrap px-4'>Course</p>
+                        <p className='w-[10vw] max-sm:w-[60vw] whitespace-nowrap px-4 '>Name</p>
+                        <p className='w-[10vw] max-sm:w-[60vw] whitespace-nowrap px-4 '>Father Name</p>
+                        <p className='w-[10vw] max-sm:w-[60vw] whitespace-nowrap px-4 '>Enrollment No.</p>
+                        <p className='w-[10vw] max-sm:w-[60vw] whitespace-nowrap px-4 '>Email</p>
+                        <p className='w-[3vw] max-sm:w-[60vw]  whitespace-nowrap px-4 '>Age</p>
+                        <p className='w-[3vw] max-sm:w-[60vw]  whitespace-nowrap px-4 '>Course</p>
                        </div>
                     </div>
                     <div>
@@ -94,10 +99,12 @@ function StudentDashboard() {
                         
                             studentArr.filter((student) => course === 'All Courses' || student.course === course).map((student,index) => (
                                 <div key={index} className='flex justify-between border-b mb-5 p-2 max-sm:w-[100vw] max-sm:overflow-x-scroll '>
-                                    <p className="w-[10vw] max-sm:w-[50vw] whitespace-nowrap px-4">{student.name}</p>
-                                    <p className="w-[10vw] max-sm:w-[100vw] whitespace-nowrap px-4">{student.email}</p>
-                                    <p className="w-[3vw] max-sm:w-[50vw] whitespace-nowrap px-4">{student.age}</p>
-                                    <p className="w-[3vw] max-sm:w-[50vw] whitespace-nowrap px-4">{student.course}</p>
+                                    <p className="w-[10vw] max-sm:w-[100vw] whitespace-nowrap px-4 ">{student.name}</p>
+                                    <p className="w-[10vw] max-sm:w-[100vw] whitespace-nowrap px-4 ">{student.fatherName}</p>
+                                    <p className="w-[10vw] max-sm:w-[100vw] whitespace-nowrap px-4 ">{student.enrollment}</p>
+                                    <p className="w-[12vw] max-sm:w-[100vw] whitespace-nowrap px-4 ">{student.email}</p>
+                                    <p className="w-[3vw] max-sm:w-[50vw] whitespace-nowrap px-4 ">{student.age}</p>
+                                    <p className="w-[3vw] max-sm:w-[50vw] whitespace-nowrap px-4 ">{student.course}</p>
                                 </div>
                             )))
                          
