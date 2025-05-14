@@ -93,7 +93,7 @@ function StudentDashboard() {
                       {div ? (<div className='text-center text-5xl text-white font-bold flex items-center justify-center h-[50vh]'> <p>Fetching Data...</p></div>) :(
                         
                             studentArr.filter((student) => course === 'All Courses' || student.course === course).map((student,index) => (
-                                <div key={index} className='flex justify-between border-b mb-5 p-2 max-sm:w-[100vw] overflow-x-scroll '>
+                                <div key={index} className='flex justify-between border-b mb-5 p-2 max-sm:w-[100vw] max-sm:overflow-x-scroll '>
                                     <p className="w-[10vw] max-sm:w-[50vw] whitespace-nowrap px-4">{student.name}</p>
                                     <p className="w-[10vw] max-sm:w-[100vw] whitespace-nowrap px-4">{student.email}</p>
                                     <p className="w-[3vw] max-sm:w-[50vw] whitespace-nowrap px-4">{student.age}</p>
