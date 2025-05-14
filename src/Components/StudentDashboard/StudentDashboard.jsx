@@ -82,7 +82,7 @@ function StudentDashboard() {
                    
                     
                     <div >
-                       <div className='flex justify-between font-bold border-b mb-5 p-2  overflow-x-scroll '>
+                       <div className='flex justify-between font-bold border-b mb-5 p-2 max-sm:overflow-x-scroll '>
                         <p className='w-[10vw]  whitespace-nowrap px-4'>Name</p>
                         <p className='w-[10vw] whitespace-nowrap px-4'>Email</p>
                         <p className='w-[3vw]  whitespace-nowrap px-4'>Age</p>
